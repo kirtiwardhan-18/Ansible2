@@ -1,0 +1,33 @@
+---
+- name: Installing Mariadb
+  hosts: web
+  tasks:
+   - name: mariadb-server
+     yum:
+       name:
+          - mariadb-server
+          - MYSQL-python
+       state: present
+
+- name: Starting mariadb server
+  service:
+     - name: mariadb
+       state: started
+       enable: true
+
+- name: mysql entries
+  mysql-user:
+      login_user: root
+      login_password: "root"
+      user: root
+      check_implicit_admin: true
+      password: "root"
+      host_all: yes
+
+- name: Create a database
+  mysql_db:
+          name: svvv
+          state: present
+          login_user: root
+          login_password: root
+...
