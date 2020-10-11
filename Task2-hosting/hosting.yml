@@ -1,0 +1,30 @@
+---
+  - name: Deploy a simple webpage
+    hosts: web
+    tasks:
+     - name: Installation of Git and HTTPD server
+       yum:
+        name:
+         - httpd
+         - git
+        state: present
+
+     - name: Start and enable httpd
+       service:
+        name: httpd
+        state: started
+        enabled: true
+
+     - name: Cloning webpage from sonu ji
+       git:
+        repo: https://github.com/kirtiwardhan-18/My-Portfolio.git
+        dest: /var/www/html/
+        clone: yes
+
+     - name: Restart httpd
+       service:
+        name: httpd
+        state: restarted
+...
+
+#this file is using yum and service module at the same time 
