@@ -1,0 +1,8 @@
+---
+ - name: This message in yaml
+   hosts: web3
+   tasks:
+     - name: Message File
+       debug:
+         msg: "{{ msg }}"
+...
