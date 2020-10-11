@@ -12,3 +12,5 @@ node1.example.com
 node2.example.com
 
 Note: The playbook will not execute until you don't define the groups.
+
+Use command "ansible-playbook filename" to run the playbook
