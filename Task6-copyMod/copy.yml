@@ -1,0 +1,9 @@
+---
+ - name: This yml is to copy the file
+   hosts: node1.example.com
+   tasks:
+     - name: This will ensure copy
+       copy:
+         content: Hello from serverX
+         dest: /var/www/html/index.html
+...
