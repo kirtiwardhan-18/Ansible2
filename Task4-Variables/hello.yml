@@ -1,0 +1,10 @@
+---
+ - name: To enable the service
+   hosts: node1.example.com
+   tasks:
+     - name: To enable
+       service:
+          name: "{{ srv }}"
+          state: started
+          enabled: true
+...

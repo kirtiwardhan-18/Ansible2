@@ -1,0 +1,12 @@
+[web1]
+node1.example.com
+
+[web2]
+node2.example.com
+
+[web3:children]
+web1
+web2
+
+[web3:vars]
+msg=This is a file

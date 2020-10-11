@@ -1,0 +1,9 @@
+---
+- name: To install httpd
+  hosts: node1.example.com
+  tasks:
+    - name: Installing {{ pkg }}
+      yum:
+       name: "{{ pkg }}"
+       state: present
+...
