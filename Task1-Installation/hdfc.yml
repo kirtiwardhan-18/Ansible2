@@ -1,0 +1,8 @@
+---
+ - hosts: HDFC
+   tasks:
+   - name: compressing /var/log to /home/hdfc.tgz
+     archive:
+      path: /var/log
+      dest: /home/hdfc.tgz
+...
